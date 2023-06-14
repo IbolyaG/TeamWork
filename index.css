@@ -1,0 +1,118 @@
+.header{
+    position:sticky top;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 10px;
+    
+}
+
+.blur{
+  filter:blur(5px)
+}
+
+
+.menu {  
+    text-align: left;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+    margin-right: 50px;
+    
+  }
+
+
+.menu_items_div {
+    opacity: 0;
+    background-color: rgb(0, 42, 255);
+    transition: transform 3s, color 3s, background-color 3s;   
+    position: fixed;
+    font-size: 25px;
+    cursor: pointer;
+    
+}
+.menu_items_div.visible {
+    display: inherit;
+    position: fixed;
+    top:80px;
+    right: 0px;
+    transform: translateX(-70px);
+    opacity: 1;
+    color: aliceblue;
+    background-color: rgba(91, 91, 227,0.7);
+    
+}
+
+.menu-items.visible {
+    list-style-type: none;
+    margin:0;
+    padding: 0;
+}
+  
+  .line {  /* belső dobozok*/
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    margin-bottom: 5px;
+    transition: transform 0.7s;
+  }
+  
+  /*  ezek már a click esemény hatására történnek meg  */
+  .menu.open .line:nth-child(1) { /*A .menu.open .line:nth-child(1) szelektor tehát a .menu osztályú elem első 
+    gyermekére vonatkozik, ha az elem egyben tartalmazza az .open osztályt, és a gyermek elem osztályneve "line".  */
+    transform: rotate(45deg) translate(5.5px, 5.5px);
+  }
+  
+  .menu.open .line:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu.open .line:nth-child(3) {  
+    transform: rotate(-45deg) translate(5.5px, -5.5px)
+  }
+
+
+  .login_div{
+    margin-top: 50px;
+    display: none;
+  }
+
+  .login_div.visible{
+    margin-top: 50px;
+    display: grid;
+    justify-content: center;
+  }
+
+  .input_div{
+    display: none
+  }
+
+  .input_div.visible{
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .grid_display{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto
+  }
+  .none_display {
+    display: none;
+  }
+
+  .osszes_termek{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    font-size: 20px;
+    padding: 50px;
+  }
+  .osszes_termek_divek{
+    display: grid;
+    padding: 20px;
+    gap: 20px;
+  }
