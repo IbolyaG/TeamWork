@@ -10,7 +10,9 @@ let akcio_nem = document.querySelector(".akcio_nem")
 let akcio_mertek = document.querySelectorAll(".akcio_mertek")
 var teszt_div = document.querySelector(".teszt_div")
 let osszes_termek_divek = document.querySelectorAll(".osszes_termek div")
-let carousel_img = document.getElementById("slider_image")
+var slider_container = document.querySelector(".slider_container")
+var slider_innerdivs = document.querySelectorAll(".slider_innerdiv");
+
 
 var username_input = document.getElementById("username");        //  felhasználónév és jelszó
 var password_input = document.getElementById("password");
@@ -43,10 +45,47 @@ function input_submit(){            //  termék felvitele gomb funkciója
     login_div.classList.toggle("visible")
 }
 
-function create_div(div_content, classlist_toggle){   //  dobozkészítő funkció
+document.addEventListener("DOMContentLoaded",function(){
+  slider_innerdivs = document.querySelectorAll(".slider_innerdiv");
+  var current_slide = 0;  //  az aktuálisan megjelenített slide sorszámát tárolja
+
+  function show_slide(n){  //  Ez a függvény felelős az adott slide megjelenítéséért. Az argumentumként kapott "n" érték alapján megváltoztatja a jelenlegi slide láthatóságát a "slides" NodeList-ben. 
+    slider_innerdivs[current_slide].style.display = "none";
+      // Az előző slide "display" tulajdonsága "none" lesz, és az új slide "display" tulajdonsága "block" lesz.
+    current_slide = (n + slider_innerdivs.length) % slider_innerdivs.length; 
+    slider_innerdivs[current_slide].style.display = "block";  //  Az aktuális slide sorszámát a "currentSlide" változó tárolja, és a % slides.length rész a slide-ok ciklikus átváltását biztosítja.
+  }
+
+  function next_slide() {
+    show_slide(current_slide + 1);
+  }  //  Ez a függvény meghívja a "show-slide" függvényt a következő slide sorszámmal
+
+ var set_int= setInterval(next_slide,3000)
+
+ slider_container.addEventListener("mouseenter", function() {
+  clearInterval(set_int);
+  for(i=0;i<slider_text.length;i++){
+  slider_text[i].style.fontSize = "30px";
+  slider_text[i].style.backgroundColor = "rgba(4, 133, 4,0.8)";
+  slider_text[i].style.borderRadius = "10px"}
+  })
+
+ slider_container.addEventListener("mouseleave", function() {
+  set_int = setInterval(next_slide,3000);
+  for(i=0;i<slider_text.length;i++){
+    slider_text[i].style.fontSize = "20px";
+    slider_text[i].style.backgroundColor = "transparent";}
+  })
+
+ show_slide(current_slide)   //  Ez a sor az első slide megjelenítését indítja el. Ez a sor biztosítja, hogy amikor az oldal betöltődik és a JavaScript kód lefut, az első slide rögtön megjelenjen.
+})  //  A current_slide változó az aktuális slide indexét tartalmazza. Az show_slide függvényhívásban átadjuk neki az current_slide értékét, hogy megjelenítse az adott slide-ot.
+
+
+function create_div(div_content, classlist_toggle, classlist_toggle_2){   //  dobozkészítő funkció
  let new_div= document.createElement("div")
  new_div.innerHTML = div_content;
- new_div.classList.toggle(classlist_toggle)
+ new_div.classList.toggle(classlist_toggle);
+ new_div.classList.toggle(classlist_toggle_2);
  document.body.appendChild(new_div);
  return new_div 
  
@@ -79,12 +118,21 @@ function input(){                                //  Az Inputbevitelhez és adat
 function display_login(){        //  mutassa a login dobozt + blur effect on
   login_div.classList.toggle("visible")
   header.classList.toggle("blur")
+  slider_container.classList.toggle("none_display")
 }
+
 
 let button_0 = document.createElement("button")
 let button_1 = document.createElement("button")
 let button_2 = document.createElement("button")
 let button_3 = document.createElement("button")
+let button_4 = document.createElement("button")
+let button_array = []
+button_array.push(button_0,button_1,button_2,button_3,button_4)
+
+button_array.forEach(function(button) {
+  button.classList.toggle("button_style");
+});
 
 function admin_login0(){  //  bejelentkezés utáni rész
   if(username_input.value == admin_username && password_input.value == admin_password){
@@ -92,10 +140,20 @@ function admin_login0(){  //  bejelentkezés utáni rész
   button_3.innerText = "Összes Termék"
   button_2.innerText = "Összes termék törlése"
   button_1.innerText = "Vissza"
+  button_4.innerText = "Kijelentkezés"
+
+  
+  
   
   login_div.classList.toggle("visible")
-return create_div("Kérem válasszon: ", "grid_display").append(button_0,button_3,button_2,button_1)
+return create_div("<u>" + "Kérem válasszon:"+ "</u>", "grid_display","text_style").append(button_0,button_3,button_2,button_1,button_4)
 }}
+
+function button_style(buttons){
+  buttons.forEach(function(button){
+    button.classList.toggle("button_style")
+  })
+}
 
 button_0.addEventListener("click", function(){        //  gombok eseményfigyelői
   input_div.classList.toggle("visible")
@@ -119,6 +177,12 @@ button_3.addEventListener("click", function(){
   
     }
 )
+button_4.addEventListener("click", function(){
+  slider_container.classList.toggle("none_display")
+  remove_div();
+  header.classList.toggle("blur");
+
+})
 
 function remove_div(){
   document.body.lastChild.remove()
@@ -136,3 +200,70 @@ function for_each(node_list, class_list_add, class_list_remove) {node_list.forEa
   element.classList.add(class_list_add);       //  forEach funkció nodeListekhez
   element.classList.remove(class_list_remove)
   })}
+
+var osszes_termek_tomb = [];
+var termekek_object = {termek_neve: "Cheddar Cheese Ring Lover", mennyiseg: 1 + "db", ara: 1000 + "Ft", termek_reszletes_leirasa:
+"Ez a burger egy igazi sajtapokalipszis! A fényes bucikat megkentük sajtszósszal, az elmaradhatatlan WHOPPER® husira pakoltunk 2 szelet cheddart, friss paradicsomot, salátát, uborkát, pirított hagymát és a tetejére még egy panírozott sajtgyűrűt is pakoltunk, amit megtöltöttünk fondue sajtszósszal. Brutál? Brutál!",
+akcio: "Nincs"};
+osszes_termek_tomb.push(termekek_object)
+termekek_object = {termek_neve:"Spicy kosár", mennyiseg: 1 + "db kosár", ara: 3000 + "ft", termek_reszletes_leirasa:
+"Kosárba zárt tüzesség…" +  7 +  "db Chili Cheese Nuggets,"+ 9 + "db Spicy King Nuggets, Közepes burgonya és 2 db választható tálkás szósz", akcio: "10%"}
+osszes_termek_tomb.push(termekek_object)
+termekek_object = {termek_neve:"Whisky BBQ Wrapper", mennyiseg: 1 + "db", ara: 2350 + "ft", termek_reszletes_leirasa:
+"Egy pikáns Wrapper az igazi ínyenceknek! Hot&Spicy Bites, Whisky szósszal nyakon öntve, ropogós sült krumplival, egy tortillában ropogósra sütve! Fontos összetevők még a cheddar sajt, a finom bacon, a pirított hagyma, a friss zöldsaláta, a pirított hagyma és a savanyú uborka. Nagyszerű! 0,1% alatti arányban alkoholt tartalmaz.",
+akcio:"Nincs"}
+osszes_termek_tomb.push(termekek_object)
+termekek_object = {termek_neve:"Pepsi", mennyiseg: 5 + "db", ara: 1000 + "ft", termek_reszletes_leirasa:
+"A jól ismert 0,33 l-es dobozos üdítő", akcio: "25%"}
+osszes_termek_tomb.push(termekek_object)
+termekek_object = {termek_neve:"Schweppes Narancs", mennyiseg: 5 + "db", ara: 1250 + "ft", termek_reszletes_leirasa:
+"0,33 l-es narancsos dobozos üdítő a kellemes időkre!", akcio: "Nincs" }
+osszes_termek_tomb.push(termekek_object)
+
+var slider_innerdiv_div = document.querySelectorAll(".slider_innerdiv div")
+var slider_text = document.querySelectorAll(".slider_text")
+let kiiratas = ""                          //  Összes termék kiiratása forEach metódussal
+osszes_termek_tomb.forEach(function(object){
+kiiratas += "Termék Neve: " + object.termek_neve + "<br>" +"Mennyisége: " +object.mennyiseg+ "<br>" + "Ára: " +object.ara
++ "<br>" + "Termék részletes leírása: " + object.termek_reszletes_leirasa + "<br>" + "Akció: " + object.akcio + "<br>"
+})
+
+var clicked_divs = document.querySelectorAll(".clicked_div")
+
+for(var i=0;i<osszes_termek_tomb.length;i++){
+  for(var property in osszes_termek_tomb[i])
+  { 
+    slider_text[i].innerHTML += osszes_termek_tomb[i][property] + "<br>";
+    clicked_divs[i].innerHTML  +=  osszes_termek_tomb[i][property] + "<br>";
+  } 
+  }
+  
+var click_div_1 = document.querySelector(".click_div_1");
+var click_div_2 = document.querySelector(".click_div_2");
+var click_div_3 = document.querySelector(".click_div_3")
+var click_div_4 = document.querySelector(".click_div_4")
+var click_div_5 = document.querySelector(".click_div_5")
+
+
+ function slider_click(actual_click_div,m){
+  header.classList.toggle("blur");
+  slider_container.classList.toggle("blur");
+  actual_click_div.classList.toggle("clicked_div");
+  actual_click_div.classList.toggle("background");
+ }
+
+slider_text[0].addEventListener("click", function(){
+  slider_click(click_div_1)
+})
+slider_text[1].addEventListener("click", function(){
+  slider_click(click_div_2)
+})
+slider_text[2].addEventListener("click", function(){
+  slider_click(click_div_3)
+})
+slider_text[3].addEventListener("click", function(){
+  slider_click(click_div_4)
+})
+slider_text[4].addEventListener("click", function(){
+  slider_click(click_div_5)
+})

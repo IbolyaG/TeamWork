@@ -1,15 +1,17 @@
 .header{
-    position:sticky top;
+    position:sticky;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     margin-right: 10px;
-    
+    margin-bottom: 10px;
+    z-index: 3;
+    top: 0;
 }
 
 .blur{
-  filter:blur(5px)
+  filter:blur(6px)
 }
 
 
@@ -20,7 +22,6 @@
     position: relative;
     cursor: pointer;
     margin-right: 50px;
-    
   }
 
 
@@ -31,7 +32,8 @@
     position: fixed;
     font-size: 25px;
     cursor: pointer;
-    
+    z-index: 3;
+    border-radius: 5px;
 }
 .menu_items_div.visible {
     display: inherit;
@@ -80,13 +82,34 @@
   }
 
   .login_div.visible{
-    margin-top: 50px;
     display: grid;
     justify-content: center;
+    font-size: 25px;
+    width: 100%;
+    height: 100%;
+  
+  .button_class{
+  border: none;
+  background-color: rgba(10, 2, 2, 0.5);
+  font-size: 25px;
+  border-radius: 10px;
+  }
+    
+  }
+  .login_div div{
+    width: fit-content;
+    height: fit-content;
+    box-shadow: 10px 10px 10px rgba(7, 136, 24, 0.7);
+  }
+
+  input{
+    background-color: rgba(182, 99, 11,0.7);
+    font-size: 1.4rem;
+    color: white;
   }
 
   .input_div{
-    display: none
+    display: none;
   }
 
   .input_div.visible{
@@ -94,6 +117,7 @@
     grid-template-columns: auto;
     justify-content: center;
     align-items: center;
+    font-size: 20px;
   }
 
   .grid_display{
@@ -116,3 +140,81 @@
     padding: 20px;
     gap: 20px;
   }
+
+  .slider_container{
+    position: relative;
+    max-width: 100%;
+    height: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 5px;
+  }
+
+  .slider_innerdiv {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: auto;
+    width: 100%;
+    height: 100%;
+  }
+
+  .slider_innerdiv div {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .slider_text{
+    line-height: 3;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 3px 3px 3px black;
+    transition: font-size 3s ease;
+  }
+  .slider_text:hover{
+    font-size: 50px;
+  }
+
+  .clicked_div{
+    display: none;
+  }
+
+  .osszes_click_div{
+    font-size: 20px;
+    text-align: center;
+    width: 50%;
+    transform: translateX(50%);
+    text-shadow: 3px 3px 7px black;
+    box-shadow: 10px 10px 10px rgb(127, 2, 127);
+    border-radius: 5px;
+    border: 5px solid rgba(11, 0, 0,0.8);
+    transition: font-size 3s;
+  }
+
+.background{
+  background-color: rgba(57, 7, 104,0.7);
+}
+
+.button_style{
+  background-color: rgba(57, 7, 104,0.7);
+  font-size: 25px;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+.button_style:hover{
+  color: aliceblue;
+  cursor:crosshair;
+  text-shadow: 5px 5px 10px;
+  box-shadow: 10px 10px 10px green;
+}
+
+.text_style {
+font-size: 20px;
+}

@@ -8,7 +8,7 @@
 </head>
 <body>
     <header class="header">
-        <img width="100px" height="100px" src="https://secretchef.hu/wp-content/uploads/2022/10/secret-chef-mini-burger-falatka-300x300.jpg" alt="logo">
+        <img style="border-radius: 5px;" width="100px" height="100px" src="https://secretchef.hu/wp-content/uploads/2022/10/secret-chef-mini-burger-falatka-300x300.jpg" alt="logo">
         <h1>JFC</h1>
         
         <nav class="menu">
@@ -29,17 +29,46 @@
     </header>
 
     <div class="login_div">
+        <div>
         <label for="">Felhasználónév:</label>
         <input id="username" value="johnny078" type="text">
         <label for="">Jelszó:</label>
         <input id="password" value="1978" type="text">
-        <button onclick="admin_login0()">Bejelentkezés</button>
+        <button class="button_class" onclick="admin_login0()">Bejelentkezés</button>
+        </div>
     </div>
     
-    <div class="slider">
-        <img id="slider_image" src="" alt="">
+    <div class="slider_container">
+        <div class="slider_innerdiv">
+             <div style="background-image:url(https://m.blog.hu/fa/fastfoodcentral/image/2023/480787522-cheddarcheeseringlover-chicken_rotator_1800x760px.jpg)">
+            <span class="slider_text"></span>
+            </div>
+        </div>
+            <div class="slider_innerdiv"><div style="background-image:url(https://image-resizer-proxy.development.dev.woltapi.com/wolt-dev-development-restaurant-api-menu-images/menu-images/6048720fe006805290065f7b/b2d921e2-002c-11ec-8658-e2ddc9b15735_wolt_spicy_snackkosar_1440x810px.jpeg?w=600)">
+                <span class="slider_text"></span>
+            </div>
+        </div>
+        <div class="slider_innerdiv">
+            <div style="background-image:url(https://m.blog.hu/fa/fastfoodcentral/image/2020/kfc/03-wrapper/american_soul_kentucky_gold_grander_wrapper.jpg)">
+            <span class="slider_text"></span></div>
+        </div>
+        <div class="slider_innerdiv">
+            <div style="background-image:url(https://s13emagst.akamaized.net/products/33651/33650491/images/res_01198e9f511072cb0d41a56925e7c6ea.jpg)">
+            <span class="slider_text"></span></div>
+        </div>
+        <div class="slider_innerdiv">
+            <div style="background-image:url(https://s7g10.scene7.com/is/image/aldi/202212210076?$H10-XL$)">
+            <span class="slider_text"></span></div>
+        </div>
+    </div> 
+    <hr>
+    <div class="osszes_click_div">
+        <div class="clicked_div click_div_1"></div>
+        <div class="clicked_div click_div_2"></div>
+        <div class="clicked_div click_div_3"></div>
+        <div class="clicked_div click_div_4"></div>
+        <div class="clicked_div click_div_5"></div>
     </div>
-
 
     <div></div>
     <div></div>
@@ -67,7 +96,7 @@
         <input type="number" class="akcio_mertek" name="akcio_merteke" id="Hány %-os?">
         <label for="termek_kep">Kép feltöltése a termékről:</label>
         <input type="file" id="Kép feltöltése a termékről:" name="termek_kep">
-        <button onclick="input_submit()">Termék felvitele</button>
+        <button class="button_style" onclick="input_submit()">Termék felvitele</button>
     </div>
 
 
