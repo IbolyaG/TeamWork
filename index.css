@@ -51,6 +51,11 @@
     list-style-type: none;
     margin:0;
     padding: 0;
+    
+}
+
+.menu-items li {
+  margin-bottom: 10px;
 }
   
   .line {  /* belső dobozok*/
@@ -217,4 +222,107 @@
 
 .text_style {
 font-size: 20px;
+}
+
+.fokategoriak_main_container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  height: 300px;
+  text-align: center;
+  font-size: 40px;
+  text-shadow: 5px 5px 10px black;
+  
+}
+.fokategoria_container_1{
+  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_Whopper_300x270px.jpg");
+  background-size: 30%;
+  color: red;
+  align-items: center;
+  display: grid;
+  transition: font-size 3s ease, background-size 3s ease;
+  
+}
+.fokategoria_container_2{
+  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_Egyszemelyes_snackkosar_300x270px.png");
+  background-size: 30%;
+  color: red;
+  transition: font-size 3s ease, background-size 3s ease;
+  align-items: center;
+  display: grid;
+}
+.fokategoria_container_3{
+  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_MyTeaZero-barack_poharas__300x270px.png");
+  background-size: 30%;
+  color: red;
+  transition: font-size 3s ease, background-size 3s ease;
+  align-items: center;
+  display: grid;
+}
+.fokategoria_container_1:hover, .fokategoria_container_2:hover, .fokategoria_container_3:hover{
+  font-size: 50px;
+  border-bottom: 5px solid black;
+  cursor: pointer;
+  background-size: 60%;
+}
+
+.burgerek_subcategory{
+  display: grid;
+  grid-template-columns: auto auto;
+  text-align: center;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+}
+.burgerek_subcategory h2{
+  background-color: rgba(13, 145, 182, 0.7);
+  border-radius: 10px;
+  width:max-content
+}
+
+.burgerek_section{
+  width: 100%;
+  height: 300px;
+  display: none;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.burger_1_container{
+  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/480788827-bk_web_cheddarcheeseringlover_500x540px.png");
+  background-size: 60%;
+  background-color: rgba(5, 133, 133,0.7);
+}
+
+.burger_2_container{
+  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_ValmarKing_500x540px_2.png");
+  background-size: 60%;
+  background-color: rgba(5, 133, 133,0.7);
+}
+.burger_3_container{
+  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_RebelWhopper%2Bpecset_500x540px.png");
+  background-size: 60%;
+  background-color: rgba(5, 133, 133,0.7);
+}
+.burgerek_section div{
+  margin-right: 10px;
+  border-radius: 10px;
+}
+.products_grid_style{
+  display: grid;
+  width: 100%;
+  height: 300px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+.products:hover{
+  font-size: 30px;
+  color: rgba(230, 4, 4,0.7);
+  background-color: blue;
+}
+
+.burgerek_subcategory h2:hover{
+background-color: brown;
+cursor: pointer;
+
 }

@@ -12,6 +12,7 @@ var teszt_div = document.querySelector(".teszt_div")
 let osszes_termek_divek = document.querySelectorAll(".osszes_termek div")
 var slider_container = document.querySelector(".slider_container")
 var slider_innerdivs = document.querySelectorAll(".slider_innerdiv");
+var fokategoriak_main_container = document.querySelector(".fokategoriak_main_container")
 
 
 var username_input = document.getElementById("username");        //  felhasználónév és jelszó
@@ -28,6 +29,11 @@ var termek_adatok_tomb = [];
 var termek1 = []                            //  A terméktömbök
 var termek2 = []
 var termek3 = []
+
+function redirect_to_page(){
+  window.location.href = "index_2.html"}
+  //  redirect-el az aloldalra
+
 
 function toggleMenu() {   //  A menü button
   menu.classList.toggle('open');
@@ -119,6 +125,7 @@ function display_login(){        //  mutassa a login dobozt + blur effect on
   login_div.classList.toggle("visible")
   header.classList.toggle("blur")
   slider_container.classList.toggle("none_display")
+  fokategoriak_main_container.classList.toggle("blur")
 }
 
 
@@ -181,7 +188,7 @@ button_4.addEventListener("click", function(){
   slider_container.classList.toggle("none_display")
   remove_div();
   header.classList.toggle("blur");
-
+  fokategoriak_main_container.classList.toggle("blur")
 })
 
 function remove_div(){
@@ -267,3 +274,4 @@ slider_text[3].addEventListener("click", function(){
 slider_text[4].addEventListener("click", function(){
   slider_click(click_div_5)
 })
+
