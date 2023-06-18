@@ -3,12 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
     <title>Shop</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <p>test</p>
+    <header class="header">
+        <img style="border-radius: 5px;" width="100px" height="100px" src="https://secretchef.hu/wp-content/uploads/2022/10/secret-chef-mini-burger-falatka-300x300.jpg" alt="logo">
+        <h1>JFC</h1>
+        
+        <nav class="menu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div> 
+        </nav>
+        <div class="menu_items_div">
+            <ul class="menu-items">
+                <li onclick="display_login()">Admin login</li>
+                <li>Termékeink</li>
+                <li>Akciós termék</li>
+                <li>Kapcsolat</li>
+            </ul>  
+        </div>     
+        <!-- menu -->
+        
+    </header>
 
+    <div class="login_div">
+        <div>
+        <label for="">Felhasználónév:</label>
+        <input id="username" value="johnny078" type="text">
+        <label for="">Jelszó:</label>
+        <input id="password" value="1978" type="text">
+        <button class="button_class" onclick="admin_login0()">Bejelentkezés</button>
+        </div>
+    </div>
+    
+    <div class="slider_container">
+        <div class="slider_innerdiv">
+             <div style="background-image:url(https://m.blog.hu/fa/fastfoodcentral/image/2023/480787522-cheddarcheeseringlover-chicken_rotator_1800x760px.jpg)">
+            <span class="slider_text"></span>
+            </div>
+        </div>
+            <div class="slider_innerdiv"><div style="background-image:url(https://image-resizer-proxy.development.dev.woltapi.com/wolt-dev-development-restaurant-api-menu-images/menu-images/6048720fe006805290065f7b/b2d921e2-002c-11ec-8658-e2ddc9b15735_wolt_spicy_snackkosar_1440x810px.jpeg?w=600)">
+                <span class="slider_text"></span>
+            </div>
+        </div>
+        <div class="slider_innerdiv">
+            <div style="background-image:url(https://m.blog.hu/fa/fastfoodcentral/image/2020/kfc/03-wrapper/american_soul_kentucky_gold_grander_wrapper.jpg)">
+            <span class="slider_text"></span></div>
+        </div>
+        <div class="slider_innerdiv">
+            <div style="background-image:url(https://s13emagst.akamaized.net/products/33651/33650491/images/res_01198e9f511072cb0d41a56925e7c6ea.jpg)">
+            <span class="slider_text"></span></div>
+        </div>
+        <div class="slider_innerdiv">
+            <div style="background-image:url(https://s7g10.scene7.com/is/image/aldi/202212210076?$H10-XL$)">
+            <span class="slider_text"></span></div>
+        </div>
+    </div> 
+    <hr>
+    <div class="osszes_click_div">
+        <div class="clicked_div click_div_1"></div>
+        <div class="clicked_div click_div_2"></div>
+        <div class="clicked_div click_div_3"></div>
+        <div class="clicked_div click_div_4"></div>
+        <div class="clicked_div click_div_5"></div>
+    </div>
+
+    <div class="fokategoriak_main_container">
+        <div class="fokategoria_container_1">
+            <h2 onclick="redirect_to_page()">Hamburger Menü</h2>
+        </div> 
+        <div class="fokategoria_container_2">
+            <h2>Kosarak</h2>
+        </div>
+        <div class="fokategoria_container_3">
+            <h2>Italok</h2>
+        </div>
+    </div>
+
+    <div class="kiemeltTermek"></div>
+
+    <footer>
+
+    </footer>
+
+    <div class="input_div">
+        <label for="termek_neve">Termék neve:</label>
+        <input type="text" id="Termék neve:" name="termek_neve">
+        <label for="mennyiseg">Mennyiség:</label>
+        <input type="number" id="Mennyiség:" name="mennyiseg">
+        <label for="ar">Ára:</label>
+        <input type="number" id="Ára:" name="ar">
+        <label for="termek_leirasa">Termék részletes leírása:</label>
+        <textarea name="termek_leirasa" id="Termék részletes leírása:" cols="30" rows="10"></textarea>
+        <label for="akcio">Van-e akció a termékre?</label>
+        <span>Igen<input type="radio" class="akcio_igen" id="Akció:" name="akcio" ></span>
+        <span>Nem<input type="radio" class="akcio_nem" id="Akció:" name="akcio"></span>
+        <label class="akcio_mertek" for="akcio_merteke">Hány %-os?</label>
+        <input type="number" class="akcio_mertek" name="akcio_merteke" id="Hány %-os?">
+        <label for="termek_kep">Kép feltöltése a termékről:</label>
+        <input type="file" id="Kép feltöltése a termékről:" name="termek_kep">
+        <button class="button_style" onclick="input_submit()">Termék felvitele</button>
+    </div>
+
+
+    <div class="osszes_termek">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+
+    <div class="teszt_div">
+    </div>
     <script src="index.js"></script>
 </body>
 </html>
