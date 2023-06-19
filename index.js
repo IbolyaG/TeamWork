@@ -46,6 +46,7 @@ menu.addEventListener('click', toggleMenu);  //  A menü button eseményfigyelő
 
 function input_submit(){            //  termék felvitele gomb funkciója
     create_div(input())
+    remove_div();
     input_div.classList.toggle("visible")
     admin_login0()
     login_div.classList.toggle("visible")
@@ -146,14 +147,13 @@ function admin_login0(){  //  bejelentkezés utáni rész
   button_0.innerText = "Új termék felvitele"
   button_3.innerText = "Összes Termék"
   button_2.innerText = "Összes termék törlése"
-  button_1.innerText = "Vissza"
   button_4.innerText = "Kijelentkezés"
 
   
   
   
   login_div.classList.toggle("visible")
-return create_div("<u>" + "Kérem válasszon:"+ "</u>", "grid_display","text_style").append(button_0,button_3,button_2,button_1,button_4)
+return create_div("<u>" + "Kérem válasszon:"+ "</u>", "grid_display","text_style").append(button_0,button_3,button_2,button_4)
 }}
 
 function button_style(buttons){
@@ -167,10 +167,7 @@ button_0.addEventListener("click", function(){        //  gombok eseményfigyel�
   remove_div()
   for_each(akcio_mertek,"none_display")
 })
-button_1.addEventListener("click", function(){
-  login_div.classList.toggle("visible")
-  remove_div()
-})
+
 button_2.addEventListener("click", function(){
   localStorage.clear();
 })
@@ -179,9 +176,10 @@ button_3.addEventListener("click", function(){
       var key = localStorage.key(i);
       var value = localStorage.getItem(key)
       osszes_termek_divek[i].innerHTML = "<p>" + value + "</p>";
-      osszes_termek_divek[i].classList.toggle("osszes_termek_divek")  
+      osszes_termek_divek[i].classList.toggle("osszes_termek_divek")
+      osszes_termek_divek[i].classList.add("none_display")
       } 
-  
+
     }
 )
 button_4.addEventListener("click", function(){
@@ -189,7 +187,17 @@ button_4.addEventListener("click", function(){
   remove_div();
   header.classList.toggle("blur");
   fokategoriak_main_container.classList.toggle("blur")
-})
+  for(var inde = 0; inde<osszes_termek_divek.length;inde++){
+    osszes_termek_divek[inde].classList.remove("osszes_termek_divek")
+    osszes_termek_divek[inde].classList.add("none_display")
+  }
+  })
+
+function back_to_choices(){
+  input_div.classList.toggle("visible");
+  login_div.classList.toggle("visible")
+  admin_login0()
+}
 
 function remove_div(){
   document.body.lastChild.remove()

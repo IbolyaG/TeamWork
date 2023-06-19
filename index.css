@@ -211,7 +211,7 @@
   border: none;
   border-radius: 10px;
   margin-bottom: 5px;
-  margin-top: 5px;
+  margin-top: 5px;;
 }
 .button_style:hover{
   color: aliceblue;
@@ -282,47 +282,95 @@ font-size: 20px;
 
 .burgerek_section{
   width: 100%;
-  height: 300px;
+  height: 200px;
   display: none;
   grid-template-columns: 1fr 1fr 1fr;
+  font-size: 20px;
+  text-shadow: 3px 3px 5px;
+  text-align: center;
+}
+.product_image_divs {
+  overflow: hidden;
+  height: 200px;
+  margin-top: 10px;
+}
+.product_details_div{
+  overflow: hidden;
+  height: 200px;
 }
 
+.overflow{
+  overflow: scroll;
+}
 .burger_1_container{
   background-image: url("https://burgerking.hu/sites/burgerking.hu/files/480788827-bk_web_cheddarcheeseringlover_500x540px.png");
   background-size: 60%;
   background-color: rgba(5, 133, 133,0.7);
+
 }
 
 .burger_2_container{
   background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_ValmarKing_500x540px_2.png");
   background-size: 60%;
   background-color: rgba(5, 133, 133,0.7);
+  
 }
 .burger_3_container{
   background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_RebelWhopper%2Bpecset_500x540px.png");
   background-size: 60%;
   background-color: rgba(5, 133, 133,0.7);
 }
+  .burger_4_container{
+  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_BaconKing_fenyes_300x270px.png");
+  background-size: 60%;
+  background-color: rgba(5, 133, 133,0.7);
+  }
+  .burger_5_container{
+  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_GlutenmentesWhopper_300x270px.png");
+  background-size: 60%;
+  background-color: rgba(5, 133, 133,0.7);
+  }
+  .burger_6_container{
+  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_ChiliCheeseBaconKing_fenyes_300x270px_1.png");
+  background-size: 60%;
+  background-color: rgba(5, 133, 133,0.7);
+  
+}
 .burgerek_section div{
   margin-right: 10px;
   border-radius: 10px;
 }
+
+.long_burger_1_container{
+  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_ChickenRoyal_500x540px.png");
+  background-size: contain;
+  background-color: rgba(5, 133, 133,0.7);
+}
+
+.long_burger_2_container{
+  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_XtraLongChiliCheese_300x270px.png");
+  background-size: contain;
+  background-color: rgba(5, 133, 133,0.7);
+}
 .products_grid_style{
   display: grid;
   width: 100%;
-  height: 300px;
-  grid-template-columns: 1fr 1fr 1fr;
+  height: 200px;
+  grid-template-columns: auto auto auto;
 }
 
 
 .products:hover{
-  font-size: 30px;
-  color: rgba(230, 4, 4,0.7);
-  background-color: blue;
+  font-size: 25px;
+  color: rgb(0, 0, 0);
+  background-color: rgba(14, 14, 207,0.6);
 }
 
 .burgerek_subcategory h2:hover{
 background-color: brown;
 cursor: pointer;
 
+}
+.height_500{
+height: 500px;
 }
