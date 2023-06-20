@@ -284,15 +284,18 @@ font-size: 20px;
   width: 100%;
   height: 200px;
   display: none;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: auto auto auto;
   font-size: 20px;
   text-shadow: 3px 3px 5px;
   text-align: center;
+  justify-content: center;
 }
 .product_image_divs {
   overflow: hidden;
   height: 200px;
   margin-top: 10px;
+  background-color: rgba(5, 133, 58, 0.6);
+  background-size: 60%;
 }
 .product_details_div{
   overflow: hidden;
@@ -304,37 +307,22 @@ font-size: 20px;
 }
 .burger_1_container{
   background-image: url("https://burgerking.hu/sites/burgerking.hu/files/480788827-bk_web_cheddarcheeseringlover_500x540px.png");
-  background-size: 60%;
-  background-color: rgba(5, 133, 133,0.7);
-
 }
 
 .burger_2_container{
   background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_ValmarKing_500x540px_2.png");
-  background-size: 60%;
-  background-color: rgba(5, 133, 133,0.7);
-  
 }
 .burger_3_container{
   background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_RebelWhopper%2Bpecset_500x540px.png");
-  background-size: 60%;
-  background-color: rgba(5, 133, 133,0.7);
 }
   .burger_4_container{
   background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_BaconKing_fenyes_300x270px.png");
-  background-size: 60%;
-  background-color: rgba(5, 133, 133,0.7);
   }
   .burger_5_container{
   background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_GlutenmentesWhopper_300x270px.png");
-  background-size: 60%;
-  background-color: rgba(5, 133, 133,0.7);
   }
   .burger_6_container{
   background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_ChiliCheeseBaconKing_fenyes_300x270px_1.png");
-  background-size: 60%;
-  background-color: rgba(5, 133, 133,0.7);
-  
 }
 .burgerek_section div{
   margin-right: 10px;
@@ -344,14 +332,31 @@ font-size: 20px;
 .long_burger_1_container{
   background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_ChickenRoyal_500x540px.png");
   background-size: contain;
-  background-color: rgba(5, 133, 133,0.7);
 }
 
 .long_burger_2_container{
   background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_XtraLongChiliCheese_300x270px.png");
   background-size: contain;
-  background-color: rgba(5, 133, 133,0.7);
 }
+.egyszemelyes_kosar_1{
+  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_Egyszemelyes_snackkosar_300x270px.png");
+  background-size:84%;
+}
+.egyszemelyes_kosar_2{
+  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_Spicy_snackkosar_300x270px.png");
+  background-size: 84%;
+}
+
+.paros_kosar_1{
+  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_Paros_snackkosar_300x270px.png");
+  background-size: 60%;
+}
+
+.paros_kosar_2{
+  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_Nuggetsezos_snackkosar_300x270px.png");
+  background-size: 60%;
+}
+
 .products_grid_style{
   display: grid;
   width: 100%;

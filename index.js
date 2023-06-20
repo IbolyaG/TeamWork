@@ -20,20 +20,24 @@ var password_input = document.getElementById("password");
 let admin_username = "johnny078"
 let admin_password = "1978"
 
-let getItem1 = localStorage.getItem("termek1")          //  elmentett elemek megfogása a localStorage-ból
-let getItem2 = localStorage.getItem("termek2")
-let getItem3 = localStorage.getItem("termek3")
+let getItem1 = localStorage.getItem("termek1");          //  elmentett elemek megfogása a localStorage-ból
+let getItem2 = localStorage.getItem("termek2");
+let getItem3 = localStorage.getItem("termek3");
+let getItem4 = localStorage.getItem("termek4");
+let getItem5 = localStorage.getItem("termek5");
 
 var termek_adatok_object = {};
 var termek_adatok_tomb = []; 
 var termek1 = []                            //  A terméktömbök
 var termek2 = []
 var termek3 = []
+var termek4 = []
+var termek5 = []
 
 function redirect_to_page(){
-  window.location.href = "index_2.html"}
+  window.location.href = "index_2.html"
+}
   //  redirect-el az aloldalra
-
 
 function toggleMenu() {   //  A menü button
   menu.classList.toggle('open');
@@ -112,12 +116,23 @@ function input(){                                //  Az Inputbevitelhez és adat
   if(getItem1 == null){
   termek1 = termek_adatok;
   localStorage.setItem("termek1",termek1);
+  location.reload();
   }else if(getItem2 == null){
   termek2 = termek_adatok;
   localStorage.setItem("termek2",termek2);
+  location.reload();
   }else if(getItem3 == null){
-    termek3 = termek_adatok;
-    localStorage.setItem("termek3",termek3);
+  termek3 = termek_adatok;
+  localStorage.setItem("termek3",termek3);
+  location.reload();
+  }else if(getItem4 == null){
+  termek4 = termek_adatok;
+  localStorage.setItem("termek4",termek4);
+  location.reload();
+  }else if(getItem5 == null){
+  termek5 = termek_adatok;
+  localStorage.setItem("termek5",termek5);
+  location.reload();
   }
   return termek_adatok
   }
@@ -148,9 +163,6 @@ function admin_login0(){  //  bejelentkezés utáni rész
   button_3.innerText = "Összes Termék"
   button_2.innerText = "Összes termék törlése"
   button_4.innerText = "Kijelentkezés"
-
-  
-  
   
   login_div.classList.toggle("visible")
 return create_div("<u>" + "Kérem válasszon:"+ "</u>", "grid_display","text_style").append(button_0,button_3,button_2,button_4)
@@ -221,19 +233,21 @@ var termekek_object = {termek_neve: "Cheddar Cheese Ring Lover", mennyiseg: 1 + 
 "Ez a burger egy igazi sajtapokalipszis! A fényes bucikat megkentük sajtszósszal, az elmaradhatatlan WHOPPER® husira pakoltunk 2 szelet cheddart, friss paradicsomot, salátát, uborkát, pirított hagymát és a tetejére még egy panírozott sajtgyűrűt is pakoltunk, amit megtöltöttünk fondue sajtszósszal. Brutál? Brutál!",
 akcio: "Nincs"};
 osszes_termek_tomb.push(termekek_object)
-termekek_object = {termek_neve:"Spicy kosár", mennyiseg: 1 + "db kosár", ara: 3000 + "ft", termek_reszletes_leirasa:
-"Kosárba zárt tüzesség…" +  7 +  "db Chili Cheese Nuggets,"+ 9 + "db Spicy King Nuggets, Közepes burgonya és 2 db választható tálkás szósz", akcio: "10%"}
+termekek_object = {termek_neve:"Spicy kosár", mennyiseg: 1 + "db", ara: 3000 + "ft", termek_reszletes_leirasa:
+"Kosárba zárt tüzesség…" +  7 +  "db Chili Cheese Nuggets,"+ 9 + "db Spicy King Nuggets, Közepes burgonya és 2 db választható tálkás szósz", 
+akcio: "Akcio: " + 10 + "%"}
 osszes_termek_tomb.push(termekek_object)
 termekek_object = {termek_neve:"Whisky BBQ Wrapper", mennyiseg: 1 + "db", ara: 2350 + "ft", termek_reszletes_leirasa:
 "Egy pikáns Wrapper az igazi ínyenceknek! Hot&Spicy Bites, Whisky szósszal nyakon öntve, ropogós sült krumplival, egy tortillában ropogósra sütve! Fontos összetevők még a cheddar sajt, a finom bacon, a pirított hagyma, a friss zöldsaláta, a pirított hagyma és a savanyú uborka. Nagyszerű! 0,1% alatti arányban alkoholt tartalmaz.",
 akcio:"Nincs"}
 osszes_termek_tomb.push(termekek_object)
 termekek_object = {termek_neve:"Pepsi", mennyiseg: 5 + "db", ara: 1000 + "ft", termek_reszletes_leirasa:
-"A jól ismert 0,33 l-es dobozos üdítő", akcio: "25%"}
+"A jól ismert 0,33 l-es dobozos üdítő", akcio: "Akcio: " + 25 + "%"}
 osszes_termek_tomb.push(termekek_object)
 termekek_object = {termek_neve:"Schweppes Narancs", mennyiseg: 5 + "db", ara: 1250 + "ft", termek_reszletes_leirasa:
 "0,33 l-es narancsos dobozos üdítő a kellemes időkre!", akcio: "Nincs" }
 osszes_termek_tomb.push(termekek_object)
+//  var akcio_tomb = ["Akcio: "]
 
 var slider_innerdiv_div = document.querySelectorAll(".slider_innerdiv div")
 var slider_text = document.querySelectorAll(".slider_text")
@@ -244,14 +258,20 @@ kiiratas += "Termék Neve: " + object.termek_neve + "<br>" +"Mennyisége: " +obj
 })
 
 var clicked_divs = document.querySelectorAll(".clicked_div")
-
+var count = 0;
 for(var i=0;i<osszes_termek_tomb.length;i++){
   for(var property in osszes_termek_tomb[i])
-  { 
-    slider_text[i].innerHTML += osszes_termek_tomb[i][property] + "<br>";
+  { slider_text[i].innerHTML += osszes_termek_tomb[i][property] + "<br>";
     clicked_divs[i].innerHTML  +=  osszes_termek_tomb[i][property] + "<br>";
+   /* /\d/.test() = leellenorzi, hogy tartalmaz e szamot */ 
+   // var property_names = Object.keys(osszes_termek_tomb[i])
+   // if (/\d/.test(osszes_termek_tomb[i].akcio)){osszes_termek_tomb[i].akcio = akcio_tomb[0] + }
+    if(osszes_termek_tomb[i].akcio === "Nincs"){delete osszes_termek_tomb[i].akcio == "Nincs";}
+    if(osszes_termek_tomb[i].mennyiseg === 1 + "db"){
+      delete osszes_termek_tomb[i].mennyiseg;
+    }
   } 
-  }
+}
   
 var click_div_1 = document.querySelector(".click_div_1");
 var click_div_2 = document.querySelector(".click_div_2");

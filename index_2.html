@@ -21,6 +21,7 @@
                 <li onclick="window.location.href='index.html'">Vissza a főoldalra</li>
                 <li id="termekeink" onclick="termekeink()">Termékeink</li>
                 <li>Akciós termék</li>
+                <li onclick="osszes_termek()">Osszes Termek</li>
                 <li>Kapcsolat</li>
             </ul>  
         </div>     
@@ -30,27 +31,42 @@
         <h2 onclick="show_burger()">Burgerek</h2>
         <h2 onclick="show_long_burger()">Long Burgerek</h2>
     </section>
+
+    <section class="kosarak_subcategory">
+        <h2 onclick="show_sub(egyszemelyes_kosarak_section)">Egyszemelyes Kosar</h2>
+        <h2 onclick="show_sub(paros_kosarak_section)">Paros Kosar</h2>
+    </section>
     
     <section class="burgerek_section">
-        <div class="burger_1_container product_image_divs">
+        <div class="burger_1_container product_image_divs product_image_divs_2">
         </div>
-        <div class="burger_2_container product_image_divs">
+        <div class="burger_2_container product_image_divs product_image_divs_2">
         </div>
-        <div class="burger_3_container product_image_divs">
+        <div class="burger_3_container product_image_divs product_image_divs_2">
         </div>
-        <div class="burger_4_container product_image_divs">
+        <div class="burger_4_container product_image_divs product_image_divs_2">
         </div>
-        <div class="burger_5_container product_image_divs">
+        <div class="burger_5_container product_image_divs product_image_divs_2">
         </div>
-        <div class="burger_6_container product_image_divs">
+        <div class="burger_6_container product_image_divs product_image_divs_2">
         </div>
     </section>
 
     <section class="long_burgerek_section">
-        <div class="long_burger_1_container product_image_divs">
+        <div class="long_burger_1_container product_image_divs product_image_divs_2 show_long">
         </div>
-        <div class="long_burger_2_container product_image_divs">
+        <div class="long_burger_2_container product_image_divs product_image_divs_2 show_long">
         </div>
+    </section>
+
+    <section class="egyszemelyes_kosarak_section">
+        <div class="egyszemelyes_kosar_1 product_image_divs product_image_divs_2"></div>
+        <div class="egyszemelyes_kosar_2 product_image_divs product_image_divs_2"></div>
+    </section>
+
+    <section class="paros_kosarak_section">
+        <div class="paros_kosar_1 product_image_divs product_image_divs_2"></div>
+        <div class="paros_kosar_2 product_image_divs product_image_divs_2"></div>
     </section>
 
     <script src="index_2.js"></script>
