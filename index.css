@@ -1,230 +1,230 @@
-.header{
-    position:sticky;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    z-index: 3;
-    top: 0;
+@charset "UTF-8";
+.header {
+  position: sticky;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  z-index: 3;
+  top: 0;
 }
 
-.blur{
-  filter:blur(6px)
+.blur {
+  filter: blur(6px);
 }
 
-
-.menu {  
-    text-align: left;
-    width: 40px;
-    height: 40px;
-    position: relative;
-    cursor: pointer;
-    margin-right: 50px;
-  }
-
+.menu {
+  text-align: left;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  cursor: pointer;
+  margin-right: 50px;
+}
 
 .menu_items_div {
-    opacity: 0;
-    background-color: rgb(0, 42, 255);
-    transition: transform 3s, color 3s, background-color 3s;   
-    position: fixed;
-    font-size: 25px;
-    cursor: pointer;
-    z-index: 3;
-    border-radius: 5px;
+  opacity: 0;
+  background-color: rgb(0, 42, 255);
+  transition: transform 3s, color 3s, background-color 3s;
+  position: fixed;
+  font-size: 25px;
+  cursor: pointer;
+  z-index: 3;
+  border-radius: 5px;
 }
+
 .menu_items_div.visible {
-    display: inherit;
-    position: fixed;
-    top:80px;
-    right: 0px;
-    transform: translateX(-70px);
-    opacity: 1;
-    color: aliceblue;
-    background-color: rgba(91, 91, 227,0.7);
-    
+  display: inherit;
+  position: fixed;
+  top: 80px;
+  right: 0px;
+  transform: translateX(-70px);
+  opacity: 1;
+  color: aliceblue;
+  background-color: rgba(91, 91, 227, 0.7);
 }
 
 .menu-items.visible {
-    list-style-type: none;
-    margin:0;
-    padding: 0;
-    
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .menu-items li {
   margin-bottom: 10px;
 }
-  
-  .line {  /* belső dobozok*/
-    width: 100%;
-    height: 3px;
-    background-color: black;
-    margin-bottom: 5px;
-    transition: transform 0.7s;
-  }
-  
-  /*  ezek már a click esemény hatására történnek meg  */
-  .menu.open .line:nth-child(1) { /*A .menu.open .line:nth-child(1) szelektor tehát a .menu osztályú elem első 
-    gyermekére vonatkozik, ha az elem egyben tartalmazza az .open osztályt, és a gyermek elem osztályneve "line".  */
-    transform: rotate(45deg) translate(5.5px, 5.5px);
-  }
-  
-  .menu.open .line:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .menu.open .line:nth-child(3) {  
-    transform: rotate(-45deg) translate(5.5px, -5.5px)
-  }
 
+.line { /* belső dobozok*/
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  margin-bottom: 5px;
+  transition: transform 0.7s;
+}
 
-  .login_div{
-    margin-top: 50px;
-    display: none;
-  }
+/*  ezek már a click esemény hatására történnek meg  */
+.menu.open .line:nth-child(1) { /*A .menu.open .line:nth-child(1) szelektor tehát a .menu osztályú elem első 
+gyermekére vonatkozik, ha az elem egyben tartalmazza az .open osztályt, és a gyermek elem osztályneve "line".  */
+  transform: rotate(45deg) translate(5.5px, 5.5px);
+}
 
-  .login_div.visible{
-    display: grid;
-    justify-content: center;
-    font-size: 25px;
-    width: 100%;
-    height: 100%;
-  
-  .button_class{
+.menu.open .line:nth-child(2) {
+  opacity: 0;
+}
+
+.menu.open .line:nth-child(3) {
+  transform: rotate(-45deg) translate(5.5px, -5.5px);
+}
+
+.login_div {
+  margin-top: 50px;
+  display: none;
+}
+
+.login_div.visible {
+  display: grid;
+  justify-content: center;
+  font-size: 25px;
+  width: 100%;
+  height: 100%;
+}
+.login_div.visible .button_class {
   border: none;
   background-color: rgba(10, 2, 2, 0.5);
   font-size: 25px;
   border-radius: 10px;
-  }
-    
-  }
-  .login_div div{
-    width: fit-content;
-    height: fit-content;
-    box-shadow: 10px 10px 10px rgba(7, 136, 24, 0.7);
-  }
-
-  input{
-    background-color: rgba(182, 99, 11,0.7);
-    font-size: 1.4rem;
-    color: white;
-  }
-
-  .input_div{
-    display: none;
-  }
-
-  .input_div.visible{
-    display: grid;
-    grid-template-columns: auto;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-  }
-
-  .grid_display{
-    display: grid;
-    justify-content: center;
-    grid-template-columns: auto
-  }
-  .none_display {
-    display: none;
-  }
-
-  .osszes_termek{
-    display: grid;
-    grid-template-columns: auto auto auto;
-    font-size: 20px;
-    padding: 50px;
-  }
-  .osszes_termek_divek{
-    display: grid;
-    padding: 20px;
-    gap: 20px;
-  }
-
-  .slider_container{
-    position: relative;
-    max-width: 100%;
-    height: 600px;
-    margin: 0 auto;
-    overflow: hidden;
-    border-radius: 5px;
-  }
-
-  .slider_innerdiv {
-    display: none;
-    position: absolute;
-    left: 0;
-    top: auto;
-    width: 100%;
-    height: 100%;
-  }
-
-  .slider_innerdiv div {
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    font-size: 20px;
-    text-align: center;
-  }
-
-  .slider_text{
-    line-height: 3;
-    color: white;
-    text-align: center;
-    font-weight: bold;
-    text-shadow: 3px 3px 3px black;
-    transition: font-size 3s ease;
-  }
-  .slider_text:hover{
-    font-size: 50px;
-  }
-
-  .clicked_div{
-    display: none;
-  }
-
-  .osszes_click_div{
-    font-size: 20px;
-    text-align: center;
-    width: 50%;
-    transform: translateX(50%);
-    text-shadow: 3px 3px 7px black;
-    box-shadow: 10px 10px 10px rgb(127, 2, 127);
-    border-radius: 5px;
-    border: 5px solid rgba(11, 0, 0,0.8);
-    transition: font-size 3s;
-  }
-
-.background{
-  background-color: rgba(57, 7, 104,0.7);
 }
 
-.button_style{
-  background-color: rgba(57, 7, 104,0.7);
+.login_div div {
+  width: fit-content;
+  height: fit-content;
+  box-shadow: 10px 10px 10px rgba(7, 136, 24, 0.7);
+}
+
+input {
+  background-color: rgba(182, 99, 11, 0.7);
+  font-size: 1.4rem;
+  color: white;
+}
+
+.input_div {
+  display: none;
+}
+
+.input_div.visible {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: auto;
+  align-items: center;
+  font-size: 20px;
+}
+
+.grid_display {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: auto;
+}
+
+.none_display {
+  display: none;
+}
+
+.osszes_termek {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  font-size: 20px;
+  padding: 50px;
+}
+
+.osszes_termek_divek {
+  display: grid;
+  padding: 20px;
+  gap: 20px;
+}
+
+.slider_container {
+  position: relative;
+  max-width: 100%;
+  height: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.slider_innerdiv {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: auto;
+  width: 100%;
+  height: 100%;
+}
+
+.slider_innerdiv div {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 20px;
+  text-align: center;
+}
+
+.slider_text {
+  line-height: 3;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 3px 3px 3px black;
+  transition: font-size 3s ease;
+}
+
+.slider_text:hover {
+  font-size: 50px;
+}
+
+.clicked_div {
+  display: none;
+}
+
+.osszes_click_div {
+  font-size: 20px;
+  text-align: center;
+  width: 50%;
+  transform: translateX(50%);
+  text-shadow: 3px 3px 7px black;
+  box-shadow: 10px 10px 10px rgb(127, 2, 127);
+  border-radius: 5px;
+  border: 5px solid rgba(11, 0, 0, 0.8);
+  transition: font-size 3s;
+}
+
+.background {
+  background-color: rgba(57, 7, 104, 0.7);
+}
+
+.button_style {
+  background-color: rgba(57, 7, 104, 0.7);
   font-size: 25px;
   border: none;
   border-radius: 10px;
   margin-bottom: 5px;
-  margin-top: 5px;;
+  margin-top: 5px;
 }
-.button_style:hover{
+
+.button_style:hover {
   color: aliceblue;
-  cursor:crosshair;
+  cursor: crosshair;
   text-shadow: 5px 5px 10px;
   box-shadow: 10px 10px 10px green;
 }
 
 .text_style {
-font-size: 20px;
+  font-size: 20px;
 }
 
-.fokategoriak_main_container{
+.fokategoriak_main_container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
@@ -232,18 +232,18 @@ font-size: 20px;
   text-align: center;
   font-size: 40px;
   text-shadow: 5px 5px 10px black;
-  
 }
-.fokategoria_container_1{
+
+.fokategoria_container_1 {
   background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_Whopper_300x270px.jpg");
   background-size: 30%;
   color: red;
   align-items: center;
   display: grid;
   transition: font-size 3s ease, background-size 3s ease;
-  
 }
-.fokategoria_container_2{
+
+.fokategoria_container_2 {
   background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_Egyszemelyes_snackkosar_300x270px.png");
   background-size: 30%;
   color: red;
@@ -251,7 +251,8 @@ font-size: 20px;
   align-items: center;
   display: grid;
 }
-.fokategoria_container_3{
+
+.fokategoria_container_3 {
   background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_MyTeaZero-barack_poharas__300x270px.png");
   background-size: 30%;
   color: red;
@@ -259,14 +260,15 @@ font-size: 20px;
   align-items: center;
   display: grid;
 }
-.fokategoria_container_1:hover, .fokategoria_container_2:hover, .fokategoria_container_3:hover{
+
+.fokategoria_container_1:hover, .fokategoria_container_2:hover, .fokategoria_container_3:hover {
   font-size: 50px;
   border-bottom: 5px solid black;
   cursor: pointer;
   background-size: 60%;
 }
 
-.burgerek_subcategory{
+.burgerek_subcategory {
   display: grid;
   grid-template-columns: auto auto;
   text-align: center;
@@ -274,13 +276,14 @@ font-size: 20px;
   width: 100%;
   justify-content: center;
 }
-.burgerek_subcategory h2{
+
+.burgerek_subcategory h2 {
   background-color: rgba(13, 145, 182, 0.7);
   border-radius: 10px;
-  width:max-content
+  width: max-content;
 }
 
-.burgerek_section{
+.burgerek_section {
   width: 100%;
   height: 200px;
   display: none;
@@ -290,6 +293,7 @@ font-size: 20px;
   text-align: center;
   justify-content: center;
 }
+
 .product_image_divs {
   overflow: hidden;
   height: 200px;
@@ -297,85 +301,93 @@ font-size: 20px;
   background-color: rgba(5, 133, 58, 0.6);
   background-size: 60%;
 }
-.product_details_div{
+
+.product_details_div {
   overflow: hidden;
   height: 200px;
 }
 
-.overflow{
+.overflow {
   overflow: scroll;
 }
-.burger_1_container{
+
+.burger_1_container {
   background-image: url("https://burgerking.hu/sites/burgerking.hu/files/480788827-bk_web_cheddarcheeseringlover_500x540px.png");
 }
 
-.burger_2_container{
+.burger_2_container {
   background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_ValmarKing_500x540px_2.png");
 }
-.burger_3_container{
+
+.burger_3_container {
   background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_RebelWhopper%2Bpecset_500x540px.png");
 }
-  .burger_4_container{
+
+.burger_4_container {
   background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_BaconKing_fenyes_300x270px.png");
-  }
-  .burger_5_container{
+}
+
+.burger_5_container {
   background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_GlutenmentesWhopper_300x270px.png");
-  }
-  .burger_6_container{
+}
+
+.burger_6_container {
   background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_ChiliCheeseBaconKing_fenyes_300x270px_1.png");
 }
-.burgerek_section div{
+
+.burgerek_section div {
   margin-right: 10px;
   border-radius: 10px;
 }
 
-.long_burger_1_container{
+.long_burger_1_container {
   background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_ChickenRoyal_500x540px.png");
   background-size: contain;
 }
 
-.long_burger_2_container{
+.long_burger_2_container {
   background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_XtraLongChiliCheese_300x270px.png");
   background-size: contain;
 }
-.egyszemelyes_kosar_1{
+
+.egyszemelyes_kosar_1 {
   background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_Egyszemelyes_snackkosar_300x270px.png");
-  background-size:84%;
+  background-size: 84%;
 }
-.egyszemelyes_kosar_2{
+
+.egyszemelyes_kosar_2 {
   background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_Spicy_snackkosar_300x270px.png");
   background-size: 84%;
 }
 
-.paros_kosar_1{
+.paros_kosar_1 {
   background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_Paros_snackkosar_300x270px.png");
   background-size: 60%;
 }
 
-.paros_kosar_2{
+.paros_kosar_2 {
   background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_Nuggetsezos_snackkosar_300x270px.png");
   background-size: 60%;
 }
 
-.products_grid_style{
+.products_grid_style {
   display: grid;
   width: 100%;
   height: 200px;
   grid-template-columns: auto auto auto;
 }
 
-
-.products:hover{
+.products:hover {
   font-size: 25px;
   color: rgb(0, 0, 0);
-  background-color: rgba(14, 14, 207,0.6);
+  background-color: rgba(14, 14, 207, 0.6);
 }
 
-.burgerek_subcategory h2:hover{
-background-color: brown;
-cursor: pointer;
+.burgerek_subcategory h2:hover {
+  background-color: brown;
+  cursor: pointer;
+}
 
-}
-.height_500{
-height: 500px;
-}
+.height_500 {
+  height: 500px;
+}/*# sourceMappingURL=index.css.map */
