@@ -62,6 +62,18 @@ products_tomb.push(products_object);
 products_object = {termek_neve:"<b>"+ "Nuggetsezős kosár"+"</b>", ara: 2200 + "Ft", termek_reszletes_leirasa: "Vigyázz, kész, mártogass! 9 db King Nuggets, 9 db Spicy King Nuggets, 2 db közepes burgonya és 4db választható tálkás szósz",
 akcio:"Akcio: "+ 20+"%"};
 products_tomb.push(products_object);
+products_object = {termek_neve:"<b>"+ "Coca-Cola®"+"</b>", ara: 400 + "Ft", termek_reszletes_leirasa: "Eredeti ízvilág. Coca-Cola® hagyományos változatban. Élvezd a jéghideg kortyokat!",
+akcio:"Nincs"};
+products_tomb.push(products_object);
+products_object = {termek_neve:"<b>"+ "Coca-Cola Zero®"+"</b>", ara: 300 + "Ft", termek_reszletes_leirasa: "Cukormentes felfrissülés. Coca-Cola® cukormentes változatban. Élvezd a jéghideg kortyokat!",
+akcio:"Akcio: "+ 10+"%"};
+products_tomb.push(products_object);
+products_object = {termek_neve:"<b>"+ "Espresso kávé"+"</b>", ara: 400 + "Ft", termek_reszletes_leirasa: "Garantáltan felpörget! Sűrű, krémes és karakteres presszókávé hamisítatlan olasz hagyományok szerint. A legkiválóbb minőségű, frissen őrölt Lavazza kávéból készítjük!",
+akcio:"Nincs"};
+products_tomb.push(products_object);
+products_object = {termek_neve:"<b>"+ "Hosszú kávé"+"</b>", ara: 350 + "Ft", termek_reszletes_leirasa: "Gyengéden élénkít. A legkiválóbb minőségű, frissen őrölt Lavazza kávéból készítjük a presszókávé hosszú és szelíd változatát, hogy bármelyik napszakban élvezhesd a forró kortyokat.",
+akcio:"Akcio: "+ 5+"%"};
+products_tomb.push(products_object);
 
 
 for(var inde=0;inde<products_tomb.length;inde++){   //  create divs, buttons
@@ -136,13 +148,16 @@ product_image_divs[index].classList.add("none_display");
 document.addEventListener("DOMContentLoaded",function(){
     burgerek_subcategory_2[0].classList.add("none_display");
     burgerek_subcategory_2[1].classList.add("none_display");
-    kosarak_subcategory.classList.add("none_display")
+    kosarak_subcategory.classList.add("none_display");
+    italok_subcategory.classList.add("none_display");
 })
 function termekeink(){                                             
     burgerek_subcategory_2[0].classList.toggle("none_display");
     burgerek_subcategory_2[1].classList.toggle("none_display");
     kosarak_subcategory.classList.toggle("none_display");
     kosarak_subcategory.classList.toggle("burgerek_subcategory");
+    italok_subcategory.classList.toggle("none_display");
+    italok_subcategory.classList.toggle("burgerek_subcategory");
 } 
 
 var kosarak_subcategory = document.querySelector(".kosarak_subcategory");
@@ -150,9 +165,15 @@ var egyszemelyes_kosarak_section = document.querySelector(".egyszemelyes_kosarak
 var paros_kosarak_section = document.querySelector(".paros_kosarak_section");
 egyszemelyes_kosarak_section.classList.toggle("none_display");
 paros_kosarak_section.classList.toggle("none_display");
+var italok_subcategory = document.querySelector(".italok_subcategory");
+var uditoitalok_section = document.querySelector(".uditoitalok_section");
+var kavek_section = document.querySelector(".kavek_section");
+uditoitalok_section.classList.toggle("none_display");
+kavek_section.classList.toggle("none_display");
 
 function show_sub(variable){
     variable.classList.toggle("products_grid_style");
     variable.classList.toggle("products");
     variable.classList.toggle("burgerek_section")
 }
+teszt_div.classList.add(".product_image_divs");

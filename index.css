@@ -98,7 +98,9 @@ gyermekére vonatkozik, ha az elem egyben tartalmazza az .open osztályt, és a 
 }
 
 .login_div div {
+  width: -moz-fit-content;
   width: fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   box-shadow: 10px 10px 10px rgba(7, 136, 24, 0.7);
 }
@@ -280,6 +282,7 @@ input {
 .burgerek_subcategory h2 {
   background-color: rgba(13, 145, 182, 0.7);
   border-radius: 10px;
+  width: -moz-max-content;
   width: max-content;
 }
 
@@ -298,7 +301,7 @@ input {
   overflow: hidden;
   height: 200px;
   margin-top: 10px;
-  background-color: rgba(5, 133, 58, 0.6);
+  background-image: linear-gradient(to right, black, blue);
   background-size: 60%;
 }
 
@@ -368,6 +371,32 @@ input {
 .paros_kosar_2 {
   background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_Nuggetsezos_snackkosar_300x270px.png");
   background-size: 60%;
+}
+
+.uditoitalok_section .uditoital_1 {
+  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/cola-300x270.png");
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.uditoitalok_section .uditoital_2 {
+  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/colazero-300x270_0.png");
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.kavek_section .kave_1 {
+  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_espresso-Lavazza_300x270px.png");
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.kavek_section .kave_2 {
+  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_Hosszukave_bogres_300x270px_0.png");
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .products_grid_style {
