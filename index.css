@@ -288,26 +288,30 @@ input {
 
 .burgerek_section {
   width: 100%;
-  height: 200px;
+  height: -moz-fit-content;
+  height: fit-content;
   display: none;
   grid-template-columns: auto auto auto;
   font-size: 20px;
   text-shadow: 3px 3px 5px;
   text-align: center;
   justify-content: center;
+  background-image: linear-gradient(to right, rgba(5, 19, 87, 0.8), rgba(21, 43, 133, 0.8), rgba(7, 71, 30, 0.8));
+  border-radius: 5px;
 }
 
 .product_image_divs {
   overflow: hidden;
   height: 200px;
   margin-top: 10px;
-  background-image: linear-gradient(to right, black, blue);
   background-size: 60%;
+  background-image: linear-gradient(to right, rgba(5, 19, 87, 0.8), rgba(21, 43, 133, 0.8), rgba(7, 71, 30, 0.8));
 }
 
 .product_details_div {
   overflow: hidden;
-  height: 200px;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .overflow {
@@ -402,7 +406,8 @@ input {
 .products_grid_style {
   display: grid;
   width: 100%;
-  height: 200px;
+  height: -moz-fit-content;
+  height: fit-content;
   grid-template-columns: auto auto auto;
 }
 
@@ -419,4 +424,11 @@ input {
 
 .height_500 {
   height: 500px;
+}
+
+.teszt_div2 {
+  background-image: linear-gradient(to right, black, blue);
+  height: 300px;
+  width: 300px;
+  display: none;
 }/*# sourceMappingURL=index.css.map */

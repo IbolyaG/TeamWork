@@ -176,4 +176,5 @@ function show_sub(variable){
     variable.classList.toggle("products");
     variable.classList.toggle("burgerek_section")
 }
-teszt_div.classList.add(".product_image_divs");
+var teszt_div2 = document.querySelector(".teszt_div2")
+teszt_div2.classList.add(".product_image_divs");
