@@ -78,6 +78,8 @@ products_tomb.push(products_object);
 
 for(var inde=0;inde<products_tomb.length;inde++){   //  create divs, buttons
     var new_div = document.createElement("div");
+    new_div.style.display = "grid";
+    new_div.style.justifyContent = "center";
     details_divs.push(new_div);
     var new_div2 = document.createElement("div");
     var new_button = document.createElement("button");
@@ -100,13 +102,13 @@ for(property in products_tomb[ind]){
 } 
 (function (index){
 buttontomb[index].addEventListener("click", function(){
-    classlist_overflow(product_image_divs[index])                 //  overflow:scroll
+    classlist_overflow(product_image_divs[index])                 //  overflow:auto
     product_image_divs[index].classList.toggle("height_500")      //  magassagnoveles gombrakatt eseten
 })
 })(ind)     //  for ciklus ind valtozojanak atadasa az onmagat meghivo funkcionak parameterkent, hogy tudjon vele dolgozni
 }
 
-function classlist_overflow(xy){                       //  overflow: scroll  function
+function classlist_overflow(xy){                       //  overflow: auto  function
     xy.classList.toggle("overflow")
 }
 
@@ -116,34 +118,26 @@ long_burgerek_section.classList.add("burgerek_section")
 function show_long_burger(){
     long_burgerek_section.classList.toggle("products_grid_style");
     long_burgerek_section.classList.toggle("products");
- /*   for(var ind=0;ind<show_long.length;ind++){
-        show_long[ind].classList.remove("none_display");
-        show_long[ind].classList.toggle("products_image_divs");
-        show_long[ind].classList.toggle("burgerek_section");
-        show_long[ind].style.display = "grid"
-        show_long[ind].style.gridTemplateColumns = "auto auto auto"
-        console.log(show_long[ind].classList)
-    }  */ console.log(long_burgerek_section.classList)
 }
 
-
-
-var szamlalo = 0;
 function osszes_termek(){  //  Osszes termek funkcio
-var new_div3 = document.createElement("div");  
+var new_div3 = document.createElement("div"); 
 for(var index=0;index<details_divs.length;index++){
-new_div3.append(product_image_divs[index])
-document.body.appendChild(new_div3)
+    new_div3.append(product_image_divs[index])
+    document.body.appendChild(new_div3)
 if(product_image_divs[index].classList.contains("product_image_divs_2")){
-    product_image_divs[index].classList.add("grid_display");
    product_image_divs[index].classList.remove("product_image_divs_2");
     product_image_divs[index].classList.remove("none_display");
+    product_image_divs[index].classList.add("grid_display");
+    new_div3.classList.add("grid_3column");
 }else if(product_image_divs[index].classList.contains("grid_display")){
 product_image_divs[index].classList.add("product_image_divs_2");
-product_image_divs[index].classList.remove("grid_display");
 product_image_divs[index].classList.add("none_display");
+product_image_divs[index].classList.remove("grid_display");
+window.location.reload();
  }
-}}
+}
+}
 
 document.addEventListener("DOMContentLoaded",function(){
     burgerek_subcategory_2[0].classList.add("none_display");
@@ -172,9 +166,16 @@ uditoitalok_section.classList.toggle("none_display");
 kavek_section.classList.toggle("none_display");
 
 function show_sub(variable){
-    variable.classList.toggle("products_grid_style");
+    if(variable.classList.contains("products") || variable.classList.contains("burgerek_section")){
+        variable.classList.toggle("none_display");
+        variable.classList.toggle("grid_center");
+    } else{
     variable.classList.toggle("products");
-    variable.classList.toggle("burgerek_section")
+    variable.classList.toggle("burgerek_section");
+    variable.classList.toggle("none_display");
+    variable.classList.toggle("grid_center");
+    }   
 }
+
 var teszt_div2 = document.querySelector(".teszt_div2")
 teszt_div2.classList.add(".product_image_divs");
