@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop</title>
     <link rel="stylesheet" href="index.css">
+    <!-- ajax /jquery konyvtar meghivasa-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header class="header">
@@ -124,20 +126,33 @@
    
     <!-- teszt chat pop up resz-->
    
-    <button class="open-button" onclick="openForm()">Chat</button>
+ <button class="open-btn" onclick="openChatWindow()" ><i class="fa fa-comment">Chat</i></button>
 
-    <div class="chat-popup" id="myForm">
-    <form action="/action_page.php" class="form-container">
-    <h1>Chat</h1>
+  <div class="chat-popup" id="chat-form-container">
+    <form action="#" class="form-container">
+        <div class="chat-window-head">
+            <h4><i class="fa fa-comment"></i>Chat window</h4>
+            <span class="close-btn" onclick="closeChatWindow()">
+             <i class="fa fa-times"></i></span>
+            
+       </div>
 
-    <label for="msg"><b>Message</b></label>
-    <textarea placeholder="Type message.." name="msg" required></textarea>
+       <div class="msg-container">
+        <div class="msg">
+            <p>Hey, how may I help you?</p>
+            <span>09:34pm</span>
+        </div>
+       </div>
 
-    <button type="submit" class="btn">Send</button>
-    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-  </form>
+       <div class="chat-box-container">
+        <div class="chat-box">
+          <input type="text" placeholder="Type your message here.." name="msg" required>
+          <button type="submit" class="btn"><i class="fa fa-chevron-circle-right send-btn"></i></button>
+        </div>
+      </div>
+   </form>
+ </div>
 
-</div>
     <script src="index.js"></script>
 </body>
 </html>

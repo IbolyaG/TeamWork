@@ -303,3 +303,15 @@ slider_text[4].addEventListener("click", function(){
   slider_click(click_div_5)
 })
 
+
+
+
+/* chat code*/
+
+function openChatWindow(){
+    document.getElementById("chat-form-container").style.display="block";
+}
+function closeChatWindow(){
+    document.getElementById("chat-form-container").style.display="none";
+}
+
