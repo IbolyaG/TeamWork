@@ -296,7 +296,7 @@ input {
   text-shadow: 3px 3px 5px;
   text-align: center;
   justify-content: center;
-  background-image: linear-gradient(to right, rgba(5, 19, 87, 0.8), rgba(21, 43, 133, 0.8), rgba(7, 71, 30, 0.8));
+  background-image: linear-gradient(to right, rgba(5, 19, 87, 0.6), rgba(21, 43, 133, 0.6), rgba(7, 71, 30, 0.6));
   border-radius: 5px;
 }
 
@@ -305,7 +305,9 @@ input {
   height: 200px;
   margin-top: 10px;
   background-size: 60%;
-  background-image: linear-gradient(to right, rgba(5, 19, 87, 0.8), rgba(21, 43, 133, 0.8), rgba(7, 71, 30, 0.8));
+  width: 300px;
+  padding-right: 20px;
+  text-align: center;
 }
 
 .product_details_div {
@@ -314,8 +316,14 @@ input {
   height: fit-content;
 }
 
+.grid_3column {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+}
+
 .overflow {
-  overflow: scroll;
+  overflow: auto;
 }
 
 .burger_1_container {
@@ -377,26 +385,28 @@ input {
   background-size: 60%;
 }
 
-.uditoitalok_section .uditoital_1 {
+.uditoital_1 {
   background-image: url("https://burgerking.hu/sites/burgerking.hu/files/cola-300x270.png");
   background-size: 40%;
   background-repeat: no-repeat;
   background-position: center;
 }
-.uditoitalok_section .uditoital_2 {
+
+.uditoital_2 {
   background-image: url("https://burgerking.hu/sites/burgerking.hu/files/colazero-300x270_0.png");
   background-size: 40%;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.kavek_section .kave_1 {
+.kave_1 {
   background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_espresso-Lavazza_300x270px.png");
   background-size: 40%;
   background-repeat: no-repeat;
   background-position: center;
 }
-.kavek_section .kave_2 {
+
+.kave_2 {
   background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_Hosszukave_bogres_300x270px_0.png");
   background-size: 40%;
   background-repeat: no-repeat;
@@ -405,16 +415,18 @@ input {
 
 .products_grid_style {
   display: grid;
-  width: 100%;
+  width: -moz-fit-content;
+  width: fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
 }
 
 .products:hover {
   font-size: 25px;
   color: rgb(0, 0, 0);
-  background-color: rgba(14, 14, 207, 0.6);
+  background-color: rgba(225, 243, 61, 0.6);
 }
 
 .burgerek_subcategory h2:hover {
@@ -427,12 +439,13 @@ input {
 }
 
 .teszt_div2 {
-  background-image: linear-gradient(to right, black, blue);
+  background-image: linear-gradient(to right, rgb(229, 207, 207), rgb(107, 107, 153));
   height: 300px;
   width: 300px;
   display: none;
 }
 
+<<<<<<< HEAD
 /*  chat dobozok style   */
 * {
   padding: 0px;
@@ -583,4 +596,9 @@ body {
 .btn:hover,
 .open-btn:hover {
   opacity: 0.9;
+=======
+.grid_center {
+  display: grid;
+  justify-content: center;
+>>>>>>> Kalmar-Istvan
 }/*# sourceMappingURL=index.css.map */
