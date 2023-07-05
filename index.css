@@ -445,11 +445,8 @@ input {
   display: none;
 }
 
-<<<<<<< HEAD
 /*  chat dobozok style   */
 * {
-  padding: 0px;
-  margin: 0px;
   box-sizing: border-box;
   font-family: Georgia, "Times New Roman", Times, serif;
 }
@@ -596,9 +593,9 @@ body {
 .btn:hover,
 .open-btn:hover {
   opacity: 0.9;
-=======
+}
+
 .grid_center {
   display: grid;
   justify-content: center;
->>>>>>> Kalmar-Istvan
 }/*# sourceMappingURL=index.css.map */
