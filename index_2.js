@@ -86,7 +86,10 @@ for(var inde=0;inde<products_tomb.length;inde++){   //  create divs, buttons
     new_button.innerText = "Tobb informacio a termekrol"
     new_button.style.backgroundColor = "transparent"
     new_button.style.border = "none"
-    new_button.style.fontSize = "20px"
+    new_button.style.fontSize = "20px";
+    new_button.style.color = "white";
+    new_button.style.display = "inline-block"
+    new_button.style.textAlign = "center"
     new_div2.appendChild(new_button);
     buttontomb.push(new_div2);
 } 
@@ -169,6 +172,7 @@ function show_sub(variable){
     if(variable.classList.contains("products") || variable.classList.contains("burgerek_section")){
         variable.classList.toggle("none_display");
         variable.classList.toggle("grid_center");
+        variable.classList.toggle("products");
     } else{
     variable.classList.toggle("products");
     variable.classList.toggle("burgerek_section");

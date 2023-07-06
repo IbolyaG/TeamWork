@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded",function(){
  slider_container.addEventListener("mouseenter", function() {
   clearInterval(set_int);
   for(i=0;i<slider_text.length;i++){
-  slider_text[i].style.fontSize = "30px";
+  slider_text[i].style.fontSize = "26px";
   slider_text[i].style.backgroundColor = "rgba(4, 133, 4,0.8)";
   slider_text[i].style.borderRadius = "10px"}
   })
@@ -99,7 +99,6 @@ function create_div(div_content, classlist_toggle, classlist_toggle_2){   //  do
  new_div.classList.toggle(classlist_toggle_2);
  document.body.appendChild(new_div);
  return new_div 
- 
 }
 
 function input(){                                //  Az Inputbevitelhez és adattároláshoz a localStorage-ban
@@ -154,7 +153,7 @@ let button_array = []
 button_array.push(button_0,button_1,button_2,button_3,button_4)
 
 button_array.forEach(function(button) {
-  button.classList.toggle("button_style");
+  button.classList.toggle("button_style_admin");
 });
 
 function admin_login0(){  //  bejelentkezés utáni rész
@@ -170,14 +169,15 @@ return create_div("<u>" + "Kérem válasszon:"+ "</u>", "grid_display","text_sty
 
 function button_style(buttons){
   buttons.forEach(function(button){
-    button.classList.toggle("button_style")
+    button.classList.toggle("button_style_admin")
   })
 }
 
 button_0.addEventListener("click", function(){        //  gombok eseményfigyelői
-  input_div.classList.toggle("visible")
-  remove_div()
-  for_each(akcio_mertek,"none_display")
+  
+  input_div.classList.toggle("visible");
+  remove_div();
+  for_each(akcio_mertek,"none_display");
 })
 
 button_2.addEventListener("click", function(){

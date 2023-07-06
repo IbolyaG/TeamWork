@@ -27,12 +27,14 @@ background-image: linear-gradient($direction,$color_stops);
     top: 0;
 }
 
+$linear_gradient_for_products: linear-gradient(to right,rgba(5, 19, 87, 0.4),rgba(21, 43, 133, 0.4), rgba(61, 136, 197, 0.4));
+
 .blur{
   filter:blur(6px)
 }
 
 
-.menu {  
+.menu{  
     text-align: left;
     width: 40px;
     height: 40px;
@@ -148,26 +150,26 @@ background-image: linear-gradient($direction,$color_stops);
     display: none;
   }
 
-  .osszes_termek{
-    display: grid;
-    grid-template-columns: auto auto auto;
-    font-size: 20px;
-    padding: 50px;
-  }
+.osszes_termek{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  font-size: 20px;
+  padding: 50px;
+  
   .osszes_termek_divek{
     display: grid;
     padding: 20px;
     gap: 20px;
   }
-
-  .slider_container{
-    position: relative;
-    max-width: 100%;
-    height: 600px;
-    margin: 0 auto;
-    overflow: hidden;
-    border-radius: 5px;
-  }
+}
+.slider_container{
+  position: relative;
+  max-width: 100%;
+  height: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 5px;
+  
 
   .slider_innerdiv {
     display: none;
@@ -185,18 +187,17 @@ background-image: linear-gradient($direction,$color_stops);
     background-size: cover;
     font-size: 20px;
     text-align: center;
+    background-position: center;
   }
+}
 
   .slider_text{
-    line-height: 3;
+    line-height: 2.5;
     color: white;
     text-align: center;
     font-weight: bold;
     text-shadow: 3px 3px 3px black;
     transition: font-size 3s ease;
-  }
-  .slider_text:hover{
-    font-size: 50px;
   }
 
   .clicked_div{
@@ -225,9 +226,27 @@ background-image: linear-gradient($direction,$color_stops);
   border: none;
   border-radius: 10px;
   margin-bottom: 5px;
-  margin-top: 5px;;
+  margin-top: 5px;
+  position: absolute;
+  left:50%;
+  transform: translateX(-50%);
+  width: 90%;
+}
+.button_style_admin{
+  background-color: rgba(57, 7, 104,0.7);
+  font-size: 25px;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 .button_style:hover{
+  color: aliceblue;
+  cursor:crosshair;
+  text-shadow: 5px 5px 10px;
+  box-shadow: 10px 10px 10px green;
+}
+.button_style_admin:hover{
   color: aliceblue;
   cursor:crosshair;
   text-shadow: 5px 5px 10px;
@@ -295,7 +314,7 @@ font-size: 20px;
 }
 
 .burgerek_section{
-  width: 100%;
+  
   height: fit-content;
   display: none;
   grid-template-columns: auto auto auto;
@@ -303,19 +322,28 @@ font-size: 20px;
   text-shadow: 3px 3px 5px;
   text-align: center;
   justify-content: center;
-  @include linear-gradient1(to right,rgba(5, 19, 87, 0.6),rgba(21, 43, 133, 0.6), rgba(7, 71, 30, 0.6) );
-  border-radius: 5px;
+ /* @include linear-gradient1(to right,rgba(5, 19, 87, 0.6),rgba(21, 43, 133, 0.6), rgba(7, 71, 30, 0.6) );
+ */ border-radius: 5px;
+ 
 }
 
 .product_image_divs {
+  position: relative;
+  border-radius: 20px;
   overflow: hidden;
   height: 200px;
   margin-top: 10px;
-  background-size: 60%;
-  
+  margin-right: 10px;
   width: 300px;
   padding-right: 20px;
   text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+.product_image_divs:nth-child(odd){
+  background-color: rgb(18, 18, 177,0.5)
 }
 .product_details_div{
   overflow: hidden;
@@ -332,23 +360,23 @@ font-size: 20px;
   overflow: auto;
 }
 .burger_1_container{
-  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/480788827-bk_web_cheddarcheeseringlover_500x540px.png");
+  background-image: $linear_gradient_for_products, url("https://burgerking.hu/sites/burgerking.hu/files/480788827-bk_web_cheddarcheeseringlover_500x540px.png");
 }
 
 .burger_2_container{
-  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_ValmarKing_500x540px_2.png");
+  background-image: $linear_gradient_for_products, url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_ValmarKing_500x540px_2.png");
 }
 .burger_3_container{
-  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_RebelWhopper%2Bpecset_500x540px.png");
+  background-image:$linear_gradient_for_products, url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_RebelWhopper%2Bpecset_500x540px.png");
 }
   .burger_4_container{
-  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_BaconKing_fenyes_300x270px.png");
+  background-image:$linear_gradient_for_products, url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_BaconKing_fenyes_300x270px.png");
   }
   .burger_5_container{
-  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_GlutenmentesWhopper_300x270px.png");
+  background-image:$linear_gradient_for_products, url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_GlutenmentesWhopper_300x270px.png");
   }
   .burger_6_container{
-  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_ChiliCheeseBaconKing_fenyes_300x270px_1.png");
+  background-image:$linear_gradient_for_products, url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_ChiliCheeseBaconKing_fenyes_300x270px_1.png");
 }
 .burgerek_section div{
   margin-right: 10px;
@@ -356,59 +384,43 @@ font-size: 20px;
 }
 
 .long_burger_1_container{
-  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_ChickenRoyal_500x540px.png");
+  background-image:$linear_gradient_for_products, url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_ChickenRoyal_500x540px.png");
   background-size: contain;
 }
 
 .long_burger_2_container{
-  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_XtraLongChiliCheese_300x270px.png");
+  background-image:$linear_gradient_for_products, url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_XtraLongChiliCheese_300x270px.png");
   background-size: contain;
 }
 .egyszemelyes_kosar_1{
-  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_Egyszemelyes_snackkosar_300x270px.png");
-  background-size:84%;
+  background-image:$linear_gradient_for_products, url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_Egyszemelyes_snackkosar_300x270px.png");
 }
 .egyszemelyes_kosar_2{
-  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_Spicy_snackkosar_300x270px.png");
-  background-size: 84%;
+  background-image:$linear_gradient_for_products, url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_Spicy_snackkosar_300x270px.png");
 }
 
 .paros_kosar_1{
-  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_Paros_snackkosar_300x270px.png");
-  background-size: 60%;
+  background-image:$linear_gradient_for_products, url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_Paros_snackkosar_300x270px.png");
 }
 
 .paros_kosar_2{
-  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_Nuggetsezos_snackkosar_300x270px.png");
-  background-size: 60%;
+  background-image:$linear_gradient_for_products, url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_Nuggetsezos_snackkosar_300x270px.png");
 }
 
 
 .uditoital_1{
-  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/cola-300x270.png");
-  background-size: 40%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-image:$linear_gradient_for_products, url("https://burgerking.hu/sites/burgerking.hu/files/cola-300x270.png");
   }
 .uditoital_2{
-  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/colazero-300x270_0.png");
-  background-size: 40%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-image:$linear_gradient_for_products, url("https://burgerking.hu/sites/burgerking.hu/files/colazero-300x270_0.png");
 }
 
 
 .kave_1{
-  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_espresso-Lavazza_300x270px.png");
-  background-size: 40%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-image:$linear_gradient_for_products, url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_espresso-Lavazza_300x270px.png");
   }
 .kave_2{
-  background-image: url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_Hosszukave_bogres_300x270px_0.png");
-  background-size: 40%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-image:$linear_gradient_for_products, url("https://burgerking.hu/sites/burgerking.hu/files/BK_Web_Hosszukave_bogres_300x270px_0.png");
   }
 
 .products_grid_style{
@@ -591,9 +603,9 @@ font-weight: 400;
   opacity: 0.9;
 }
 
-
-
 .grid_center{
   display: grid;
   justify-content: center;
+  grid-template-columns: auto auto auto;
+  width:100%
 }
